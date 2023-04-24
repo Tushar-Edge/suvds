@@ -22,11 +22,11 @@ def background_thread():
             host="localhost",
             user="root",
             password="Edge@86722768",
-            database="vehicleregistration"
+            database="suvds"
         )
 
         mycursor = mydb.cursor()
-        sql = "SELECT * FROM realtimetest WHERE id = '%s'" % latestsrno
+        sql = "SELECT * FROM main WHERE id = '%s'" % latestsrno
         mycursor.execute(sql)
         print('Here1')
         result = mycursor.fetchall()
@@ -37,14 +37,30 @@ def background_thread():
             print("Waiting...")
             continue
         
-        newprice = (result[0][0])
-        newprice = str(newprice)
-        fname = (result[0][1])
+
+
+        data = { 
+            'newprice': str(result[0][0]),
+            'lics_no': result[0][1],
+            'c_make': result[0][2],
+            'c_model': result[0][3],
+            'c_color': result[0][4],
+            'location': result[0][5],
+            'longitude': result[0][6],
+            'latitude': result[0][7],
+            'date_s': result[0][8],
+            'time_s': result[0][9],
+            'flag': result[0][10]
+        }
+
+
+       
+
 
         #price = ((requests.get(url)).json())['data']['amount']
         
-        if int(newprice) == latestsrno:
-            socketio.emit('my_response', {'data': 'Test: ' + newprice + '            ' + fname, 'count': count})
+        if int(data['newprice']) == latestsrno:
+            socketio.emit('my_response', {'data': 'Test: ' + data['newprice'] + '            ' + data['lics_no'], 'count': count})
             latestsrno += 1
         else:
             continue

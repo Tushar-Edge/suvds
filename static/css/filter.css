@@ -1,0 +1,49 @@
+ /* Filter Styles */
+ .filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .filter-group {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .filter-group label {
+    margin-right: 5px;
+    font-size: 14px;
+    color: #666666;
+  }
+  
+  .filter-group input[type="date"],
+  .filter-group input[type="text"] {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .filter-group input[type="date"]:focus,
+  .filter-group input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  #filter-button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #filter-button:hover {
+    background-color: #388e3c;
+  }
