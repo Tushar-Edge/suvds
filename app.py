@@ -1,8 +1,9 @@
 from threading import Lock
-from flask import Flask, render_template, session
+from flask import Flask, render_template, session, jsonify
 from flask_socketio import SocketIO, emit
 import mysql.connector
 import requests
+import json
 
 async_mode = None
 app = Flask(__name__)
@@ -48,19 +49,22 @@ def background_thread():
             'location': result[0][5],
             'longitude': result[0][6],
             'latitude': result[0][7],
-            'date_s': result[0][8],
-            'time_s': result[0][9],
-            'flag': result[0][10]
+            'date_s': str(result[0][8]),
+            'time_s': str(result[0][9]),
+            'flag': result[0][10],
+            'count':count
+            
         }
 
 
        
-
-
         #price = ((requests.get(url)).json())['data']['amount']
         
         if int(data['newprice']) == latestsrno:
-            socketio.emit('my_response', {'data': 'Test: ' + data['newprice'] + '            ' + data['lics_no'], 'count': count})
+            #socketio.emit('my_response', {'newprice':data['newprice'],'lics_no':data['lics_no'], 'c_make':data['c_make'], 'c_model':data['c_model'],'c_color':data['c_color'],'location':data['location'],'longitude':data['longitude'],'latitude':data['latitude'], 'date_s':data['date_s'],'time_s':data['time_s'], 'flag':data['flag'], 'count':count })
+            socketio.emit('my_response', data)
+
+
             latestsrno += 1
         else:
             continue

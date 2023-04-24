@@ -15,7 +15,10 @@
 
 
             socket.on('my_response', function(msg, cb) {
-                $('#log').append('<br>' + $('<div/>').text('Received #' + msg.count + ': ' + msg.data).html());
+
+               
+                //console.log(msg.c_make);
+                $('#log').append('<br>' + $('<div/>').text('Received #' + msg.count + ': ' + msg.c_make + ' ').html());
                 if (cb)
                     cb();
             });
