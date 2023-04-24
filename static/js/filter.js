@@ -22,11 +22,11 @@ function filter() {
     }
 
     // Get cell values
-    const dateCell = row.getElementsByTagName("td")[5];
+    const dateCell = row.getElementsByTagName("td")[6];
     ///const yearCell = dateCell.spli;
-    const locationCell = row.getElementsByTagName("td")[4];
+    const locationCell = row.getElementsByTagName("td")[5];
 
-    const flagCell = row.getElementsByTagName("td")[6];
+    const flagCell = row.getElementsByTagName("td")[8];
 
     // Filter by date
     if (dateValue !== "") {
@@ -48,7 +48,7 @@ function filter() {
 
 
         // check if the flag is 1
-      if (flagCell.innerText === "yes") {
+      if (flagCell.innerText === "True") {
         // set the row background color to red
         row.style.backgroundColor = 'red';
         continue;

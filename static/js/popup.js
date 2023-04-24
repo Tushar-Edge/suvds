@@ -1,5 +1,5 @@
 // function to show the pop-up window with the images
-function showPopup() {
+export function showPopup() {
 	// show the background blur
 	document.getElementById("background").style.display = "block";
 
@@ -8,7 +8,7 @@ function showPopup() {
 }
 
 // function to close the pop-up window
-function closePopup() {
+export function closePopup() {
 	// hide the background blur and the pop-up container
 	document.getElementById("background").style.display = "none";
 	document.getElementById("popup-container").style.display = "none";

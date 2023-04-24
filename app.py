@@ -15,6 +15,9 @@ def background_thread():
     """Example of how to send server generated events to clients."""
     count = 0
     latestsrno = 1
+    
+    
+   
     while True:
         socketio.sleep(0)
         count += 1
@@ -25,6 +28,7 @@ def background_thread():
             password="Edge@86722768",
             database="suvds"
         )
+
 
         mycursor = mydb.cursor()
         sql = "SELECT * FROM main WHERE id = '%s'" % latestsrno
@@ -42,16 +46,16 @@ def background_thread():
 
         data = { 
             'newprice': str(result[0][0]),
-            'lics_no': result[0][1],
-            'c_make': result[0][2],
-            'c_model': result[0][3],
-            'c_color': result[0][4],
-            'location': result[0][5],
-            'longitude': result[0][6],
-            'latitude': result[0][7],
+            'lics_no': str(result[0][1]),
+            'c_make': str(result[0][2]),
+            'c_model': str(result[0][3]),
+            'c_color': str(result[0][4]),
+            'location': str(result[0][5]),
+            'longitude': str(result[0][6]),
+            'latitude': str(result[0][7]),
             'date_s': str(result[0][8]),
             'time_s': str(result[0][9]),
-            'flag': result[0][10],
+            'flag': str(result[0][10]),
             'count':count
             
         }
@@ -78,8 +82,7 @@ def index():
 @socketio.event
 def my_event(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
-    emit('my_response',
-         {'data': message['data'], 'count': session['receive_count']})
+    #emit('my_response', {'data': message['data'], 'count': session['receive_count']})
 
 @socketio.event
 def connect():
@@ -87,7 +90,7 @@ def connect():
     with thread_lock:
         if thread is None:
             thread = socketio.start_background_task(background_thread)
-    emit('my_response', {'data': 'Connected', 'count': 0})
+    #emit('my_response', {'data': 'Connected', 'count': 0})
 
 if __name__ == '__main__':
     socketio.run(app)

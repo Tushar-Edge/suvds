@@ -1,41 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Flask-SocketIO Test</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--included styles-->
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="../static/css/filter.css">
+    <link rel="stylesheet" href="../static/css/map.css">
+    <link rel="stylesheet" href="../static/css/toggle.css">
+    <link rel="stylesheet" href="../static/css/sliding_panel.css">
+    <link rel="stylesheet" href="../static/css/report_table.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(document).ready(function() {
-            var socket = io();
+   
+   <!--included scripts-->
+   
+    <script src="../static/js/filter.js"></script>
+    <script src="../static/js/map.js"></script>
+    <script src="../static/js/popup.js"></script>
+    <script src="../static/js/table.js"></script>
+    <script src="../static/js/toggle_table.js"></script>
+    <script src="../static/js/data.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-
-            socket.on('connect', function() {
-                socket.emit('my_event', {data: 'I\'m connected!'});
-            });
-
-
-            socket.on('my_response', function(msg, cb) {
-
-               
-                //console.log(msg.c_make);
-                $('#log').append('<br>' + $('<div/>').text('Received #' + msg.count + ': ' + msg.c_make + ' ').html());
-                if (cb)
-                    cb();
-            });
-            
-        });
-        </script>
+    <title>Document</title>
+  
+   
 </head>
-
 <body>
-    <h1>Real-time Data</h1>
 
-    <p>
-      Async mode is: <b>{{ async_mode }}</b><br>
-    </p>
+  <div id="popup-container">
+    <div id="popup">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <div id="images-container">
+        <div id="mapid"></div>
+    
 
-    <h2>Receive:</h2>
-    <div id="log"></div>
+      </div>
+    </div>
+  </div>
 
-</body>
+  
+  <div id="background"></div>
+
+
+    <header>Header</header>
+  
+  
+    <div id="main"> 
+
+    
+        
+      <article><div class="table-container">
+        <div class="filter-container">
+          <div class="filter-group">
+            <label for="date-filter">Filter by Date:</label>
+            <input type="date" id="date-filter">
+          </div>
+          
+          <div class="filter-group">
+            <label for="location-filter">Filter by Location:</label>
+            <input type="text" id="location-filter">
+          </div>
+          <button id="filter-button" onclick="filter()">Filter</button>
+          
+      <label class="toggle">
+        <input class="toggle-checkbox" type="checkbox" onclick="toggleTableRows(this)">
+        <div class="toggle-switch"></div>
+        <span class="toggle-label">Flagged</span>
+      </label>
+          
+        </div>
+        <div class="tablex">
+        <table>
+          <thead>
+            <tr>
+              <th>Sr No.</th>
+              <th>License Number</th>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Color</th>
+              <th>Location</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Flag</th>
+              <th>show map</th>  
+            </tr>
+          </thead>
+          <tbody>
+          
+        
+          </tbody>
+        </table>
+    </div>
+      </div></article>
+      <nav>Nav</nav>
+      <aside>Aside</aside>
+    </div>
+    <footer>Footer</footer>
+    
+    
+ 
+  </body>
+
+        
+
 </html>
