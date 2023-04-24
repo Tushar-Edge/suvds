@@ -1,4 +1,4 @@
-import { showPopup,closePopup } from './popup.js';
+//import { showPopup,closePopup } from './popup.js';
 
     $(document).ready(function() {
         var socket = io();
@@ -36,23 +36,25 @@ import { showPopup,closePopup } from './popup.js';
             cell6.innerHTML=data.location;
             cell7.innerHTML=data.date_s;
             cell8.innerHTML=data.time_s;
-            cell9.innerHTML=data.flag_s;
+            cell9.innerHTML=data.flag;
 
-            // let button = document.createElement("button");
-            // button.innerHTML="Show map";
 
-            // button.onclick=showPopup();
-            // cell10.append(button)
+            let button = document.createElement("button");
+             button.innerHTML="Show map";
 
-                
+             button.onclick=showPopup();
+            
+            cell10.append(button)
+
+            if (cb)
+                cb();
            
                 
                 //row += '<td></td>';
                
             //console.log(msg.c_make);
            // $('#log').append('<br>' + $('<div/>').text('Received #' + msg.count + ': ' + msg.c_make + ' ').html());
-            if (cb)
-                cb();
+            
         });
         
     });

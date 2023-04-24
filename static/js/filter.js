@@ -48,7 +48,7 @@ function filter() {
 
 
         // check if the flag is 1
-      if (flagCell.innerText === "True") {
+      if (flagCell.innerText === "1") {
         // set the row background color to red
         row.style.backgroundColor = 'red';
         continue;
