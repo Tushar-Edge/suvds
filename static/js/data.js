@@ -38,13 +38,20 @@
             cell8.innerHTML=data.time_s;
             cell9.innerHTML=data.flag;
 
+            if(data.flag==1)
+            {
+            newRow.style.backgroundColor = 'red'
+            }
 
-            let button = document.createElement("button");
-             button.innerHTML="Show map";
 
-             button.onclick=showPopup();
-            
-            cell10.append(button)
+
+
+            // let button = document.createElement("button");
+            // button.innerHTML="Show map";
+
+            // button.onclick=showPopup();
+            // cell10.innerHTML='';
+            // cell10.append(button);
 
             if (cb)
                 cb();

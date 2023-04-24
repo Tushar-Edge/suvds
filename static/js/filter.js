@@ -36,6 +36,13 @@ function filter() {
         row.style.display = "none";
         continue;
       }
+      else{
+        row.style.display = "";
+      }
+    }
+    else
+    {
+      row.style.display = "";
     }
 
     // Filter by location
@@ -45,14 +52,21 @@ function filter() {
         continue;
       }
     }
+    else{
+      row.style.display = "";
+    }
 
 
-        // check if the flag is 1
-      if (flagCell.innerText === "1") {
-        // set the row background color to red
-        row.style.backgroundColor = 'red';
-        continue;
-      }
+      //   // check if the flag is 1
+      // if (flagCell.innerText === '1') {
+      //   // set the row background color to red
+      //   row.style.backgroundColor = 'red';
+      //   continue;
+      // }
+      // else
+      // {
+      //   row.style.display = "";
+      // }
 
     // Show row if it passes all filters
     row.style.display = "";
@@ -60,9 +74,31 @@ function filter() {
 }
 
 
+//id="location-filter"
 
 
 
+// const table = document.querySelector('table tbody');
+// const rows = table.querySelectorAll('tr');
+
+// const inputElement = document.getElementById("location-filter");
+// const locationValue = document.getElementById("location-filter").value.toLowerCase();
+
+
+// inputElement.onchange = function() {
+//   rows.forEach((row) => {
+//     const locationCell = row.getElementsByTagName("td")[6];
+//     if (locationValue !== "") {
+//       if (locationCell.textContent.toLowerCase().indexOf(locationValue) === -1) {
+//         row.style.display = "none";
+//         //continue;
+//       }
+//     }
+//     else{
+//       row.style.display = "";
+//     }
+//   });
+// };
 
 
 
