@@ -1,4 +1,24 @@
-//import { showPopup,closePopup } from './popup.js';
+//import { showPopup,closePopup } from './popup.js';// function to show the pop-up window with the images
+function showPopup() {
+	// show the background blur
+	document.getElementById("background").style.display = "block";
+
+	// show the pop-up container
+	document.getElementById("popup-container").style.display = "block";
+}
+
+// function to close the pop-up window
+ function closePopup() {
+	// hide the background blur and the pop-up container
+	document.getElementById("background").style.display = "none";
+	document.getElementById("popup-container").style.display = "none";
+}
+
+
+
+
+
+
 
     $(document).ready(function() {
         var socket = io();
@@ -37,6 +57,18 @@
             cell7.innerHTML=data.date_s;
             cell8.innerHTML=data.time_s;
             cell9.innerHTML=data.flag;
+            // cell10.appendChild(Object.assign(document.createElement('button'), {textContent: 'show  map', onclick: showPopup}));
+            // cell10.appendChild(Object.assign(document.createElement('button'), {
+            //     textContent: 'show map',
+            //     onclick: showPopup,
+            //     style: 'background-color: ; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;'
+            //   }));
+            cell10.appendChild(Object.assign(document.createElement('i'), {
+                className: 'fas fa-map-marker-alt',
+                onclick: showPopup,
+                style: 'cursor: pointer; color: blue'
+              }));    
+
 
             if(data.flag==1)
             {
@@ -52,6 +84,9 @@
             // button.onclick=showPopup();
             // cell10.innerHTML='';
             // cell10.append(button);
+
+            // create a button, add a click listener, append to cell, and define click function in one line
+           
 
             if (cb)
                 cb();

@@ -7,13 +7,14 @@
 
     <!--included styles-->
     <link rel="stylesheet" href="../static/css/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
     <link rel="stylesheet" href="../static/css/filter.css">
     <link rel="stylesheet" href="../static/css/map.css">
     <link rel="stylesheet" href="../static/css/toggle.css">
     <link rel="stylesheet" href="../static/css/sliding_panel.css">
     <link rel="stylesheet" href="../static/css/report_table.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
    
@@ -25,10 +26,17 @@
     <script src="../static/js/table.js"></script>
     <script src="../static/js/toggle_table.js"></script>
     <script src="../static/js/data.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+   
+
+    <head>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha384-EbFkNjQssoq9iZzY2iJ6PYvD6I7y1dXRi0Wqvqx6UvE6OhfZ6b9YrOo+TujTJ1td" crossorigin="anonymous">
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha384-vBgC3+NfN4D4Ct+RdZbPJssG9BRLV7ivjRYGw/oV7taDXn5l8V7PyuLOEWL5Vxh5" crossorigin="anonymous"></script>
+    </head>
+    
 
     <title>Document</title>
   
+    
    
 </head>
 <body>
@@ -37,7 +45,10 @@
     <div id="popup">
       <span class="close" onclick="closePopup()">&times;</span>
       <div id="images-container">
-        <div id="mapid"></div>
+        <div id="mapid">
+
+          
+        </div>
     
 
       </div>
