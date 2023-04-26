@@ -85,9 +85,16 @@
         flex: 1;
         order: 1;
       }
-      #main > nav, 
+
+      #main > nav
+      {
+        flex: 0 0 21vw;
+      }
+
+
+
       #main > aside {
-        flex: 0 0 20vw;
+        flex: 0 0 19vw;
       }
       #main > nav {
         background: #D7E8D4;
