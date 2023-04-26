@@ -48,9 +48,12 @@ function showPopup() {
             var cell10=newRow.insertCell(9);
             var cell11=newRow.insertCell(10)
 
-
+            
+            
             cell1.innerHTML=data.newprice;
-            cell2.innerHTML=data.lics_no;
+           // cell2.innerHTML = `<div id="lics" onclick="search()">${data.lics_no}</div>`;
+           cell2.innerHTML = `<div id="lics" onclick="search('${data.lics_no}')">${data.lics_no}</div>`;
+
             cell3.innerHTML=data.c_make;
             cell4.innerHTML=data.c_model;
             cell5.innerHTML=data.c_color;
@@ -64,56 +67,15 @@ function showPopup() {
                 style: 'cursor: pointer; color: blue'
               }));    
 
-              var licenseNos = [];
-              fetch('complaints.json')
-                .then(response => response.json())
-                .then(data => {
-                  data.forEach(obj => {
-                    licenseNos.push(obj.license_no);
-                  });
-                  console.log(licenseNos); // Output: ["GJ07IJ77886", "TN06EF5566", "UP03AB9101"]
-                })
-               .catch(error => console.error(error)); // Add semicolon here
-              
-
-
             
+
             if(data.flag==1)
             {
             newRow.style.backgroundColor = 'red'
             }
 
-            licenseNos.forEach(lics=>
-                {
-                    if(data.lics_no==lics && data.flag==1)
-                    {
-                        newRow.style.backgroundColor = 'blue'
-                    }
-
-                });
-          
 
 
-
-
-           document.getElementById("vehicle-license-number").value
-         if(document.getElementById("vehicle-license-number").value==data.lics_no)   
-         {
-            
-            var table = document.querySelector('.tablexx table tbody');
-            var newRowN = table.insertRow();
-            var cell1=newRowinsertCell(0);
-            var cell2=newRowN.insertCell(1);
-            var cell3=newRowN.insertCell(2);
-            var cell4=newRowN.insertCell(3);
-
-            //cell1.innerHTML=
-            cell2.innerHTML=data.location;
-            cell3.innerHTML=data.date_s;
-            cell4.innerHTML=data.time_s;
-
-
-         }
 
             if (cb)
                 cb();
