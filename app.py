@@ -29,7 +29,7 @@ def background_thread():
 
     complaints_list = []
     for row in result_complaint:
-        complaint_dict = {'sr_no': row[0], 'license_no': row[1], 'complaints_registered': row[2]}
+        complaint_dict = {'license_no': row[0]}
         complaints_list.append(complaint_dict)
 
 # Write the complaints_list to a JSON file

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--included styles-->
+   
+
     <link rel="stylesheet" href="../static/css/main.css">
     
     <link rel="stylesheet" href="../static/css/filter.css">
@@ -14,7 +16,8 @@
     <link rel="stylesheet" href="../static/css/sliding_panel.css">
     <link rel="stylesheet" href="../static/css/report_table.css">
     <link rel="stylesheet" href="../static/css/nav.css">
-
+    
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
@@ -31,11 +34,13 @@
    
 
   
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-    
-    
-    
+          <!-- Leaflet library -->
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+          <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+          <!-- Leaflet GeoJSON library -->
+        
+
 
     <title>Document</title>
   
@@ -44,14 +49,18 @@
 </head>
 <body>
 
+
+
   <div id="popup-container">
     <div id="popup">
       <span class="close" onclick="closePopup()">&times;</span>
       <div id="images-container">
-        <div id="mapid">
+        
+  <div id="mapid">
 
-          
-        </div>
+        
+  </div>
+        
     
 
       </div>
@@ -152,10 +161,11 @@
     </div>
     <footer>Footer</footer>
     
+
+    <script src="https://unpkg.com/leaflet-geojson@0.9.1/dist/leaflet-geojson.js"></script>
     
- 
+
   </body>
 
         
-
 </html>

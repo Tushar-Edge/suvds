@@ -67,12 +67,35 @@ function showPopup() {
                 style: 'cursor: pointer; color: blue'
               }));    
 
-            
+              var licenseNos = [];
+              fetch('complaints.json')
+                .then(response => response.json())
+                .then(data => {
+                  data.forEach(obj => {
+                    licenseNos.push(obj.license_no);
+                  });
+                  console.log(licenseNos); // Output: ["GJ07IJ77886", "TN06EF5566", "UP03AB9101"]
+                })
+               .catch(error => console.error(error)); // Add semicolon here
+              
 
+
+            
             if(data.flag==1)
             {
             newRow.style.backgroundColor = 'red'
             }
+
+            licenseNos.forEach(lics=>
+                {
+                    if(data.lics_no==lics && data.flag==1)
+                    {
+                        newRow.style.backgroundColor = 'blue'
+                    }
+
+                });
+          
+
 
 
 

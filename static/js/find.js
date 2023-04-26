@@ -27,10 +27,10 @@ function search(lics_value = "")
 
         const lics_no=div.textContent;
      
-        const location_ = row.getElementsByTagName("td")[5].innerHTML;
-        const date_ = row.getElementsByTagName("td")[6].innerHTML;
-        const time_ = row.getElementsByTagName("td")[7].innerHTML;
-        const flag_ = row.getElementsByTagName("td")[8].innerHTML;
+        const location_ = row.getElementByTagName("td")[5].innerHTML;
+        const date_ = row.getElementByTagName("td")[6].innerHTML;
+        const time_ = row.getElementByTagName("td")[7].innerHTML;
+        const flag_ = row.getElementByTagName("td")[8].innerHTML;
        
 
      
