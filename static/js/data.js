@@ -48,12 +48,9 @@ function showPopup() {
             var cell10=newRow.insertCell(9);
             var cell11=newRow.insertCell(10)
 
-            
-            
-            cell1.innerHTML=data.newprice;
-           // cell2.innerHTML = `<div id="lics" onclick="search()">${data.lics_no}</div>`;
-           cell2.innerHTML = `<div id="lics" onclick="search('${data.lics_no}')">${data.lics_no}</div>`;
 
+            cell1.innerHTML=data.newprice;
+            cell2.innerHTML=data.lics_no;
             cell3.innerHTML=data.c_make;
             cell4.innerHTML=data.c_model;
             cell5.innerHTML=data.c_color;
@@ -99,6 +96,24 @@ function showPopup() {
 
 
 
+           document.getElementById("vehicle-license-number").value
+         if(document.getElementById("vehicle-license-number").value==data.lics_no)   
+         {
+            
+            var table = document.querySelector('.tablexx table tbody');
+            var newRowN = table.insertRow();
+            var cell1=newRowinsertCell(0);
+            var cell2=newRowN.insertCell(1);
+            var cell3=newRowN.insertCell(2);
+            var cell4=newRowN.insertCell(3);
+
+            //cell1.innerHTML=
+            cell2.innerHTML=data.location;
+            cell3.innerHTML=data.date_s;
+            cell4.innerHTML=data.time_s;
+
+
+         }
 
             if (cb)
                 cb();

@@ -1,46 +1,39 @@
-function search(lics_value = "")
+function search()
 {
-   
-
     const rows = document.querySelectorAll('table tbody tr');
-    const lics_argument=document.getElementById('vehicle-license-number');
-
-    if(lics_value!="")
-   {
-    lics_argument.value="";
-   }
-   else
-   {
-    lics_value=lics_argument.value.trim();
-   }
-
-   count=1;
-   
+    const lics_value=document.getElementById('vehicle-license-number').value.trim();
     var table_ = document.querySelector('.tablexx table tbody');
     table_.innerHTML='';
-    var checkif=0;
+    checkif=0;
         
     rows.forEach(row => {
-        const lics_ = row.getElementsByTagName("td")[1].innerHTML;
-        var div= document.createElement('div');
-        div.innerHTML = lics_;
+        const lics_no = row.getElementsByTagName("td")[1].innerHTML;
 
+<<<<<<< HEAD
         const lics_no=div.textContent;
      
-        const location_ = row.getElementByTagName("td")[5].innerHTML;
-        const date_ = row.getElementByTagName("td")[6].innerHTML;
-        const time_ = row.getElementByTagName("td")[7].innerHTML;
-        const flag_ = row.getElementByTagName("td")[8].innerHTML;
+        const location_ = row.getElementsByTagName("td")[5].innerHTML;
+        const date_ = row.getElementsByTagName("td")[6].innerHTML;
+        const time_ = row.getElementsByTagName("td")[7].innerHTML;
+        const flag_ = row.getElementsByTagName("td")[8].innerHTML;
+=======
+        const location_ = row.getElementsByTagName("td")[5].innerHTML;
+        const date_ = row.getElementsByTagName("td")[6].innerHTML;
+        const time_ = row.getElementsByTagName("td")[7].innerHTML;
+        const flag_ = row.getElementsByTagName("td")[8].innerHTML;
+>>>>>>> parent of ab1174d (eight)
        
 
-     
-    //  console.log(lics_no);
-      // console.log(lics_value);
+       //const name = prompt(location_);
+
+      // console.log(lics_no);
+       //console.log(lics_value);
        
       if(lics_no == lics_value)
        {
         
-            
+            //const name = prompt(lics_no+ ""+ lics_value,);
+           
             checkif=1;
             var newRow = table_.insertRow();
 
@@ -49,7 +42,7 @@ function search(lics_value = "")
             var cell3=newRow.insertCell(2);
             var cell4=newRow.insertCell(3);
 
-            cell1.innerHTML=count++;
+            cell1.innerHTML='1';
             cell2.innerHTML=location_;
             cell3.innerHTML=date_;
             cell4.innerHTML=time_;
@@ -60,12 +53,12 @@ function search(lics_value = "")
           
 
             }
-            // if(flag_=="1")
-            // {
-            //     alert("This vehicle is flagged");
+            if(flag_=="1")
+            {
+                alert("This vehicle is flagged");
           
 
-            // }
+            }
 
 
       }
@@ -73,8 +66,6 @@ function search(lics_value = "")
 
         
     });
-
-
     if(checkif==0)
       {
         alert("This vehicle is not yet spotted");
