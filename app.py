@@ -15,8 +15,29 @@ def background_thread():
     """Example of how to send server generated events to clients."""
     count = 0
     latestsrno = 1
+    mydbcomplaint = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="Edge@86722768",
+            database="Complaints"
+        )
     
-    
+    mycursor_complaint = mydbcomplaint.cursor()
+    sql_complaint="SELECT * FROM complaints"
+    mycursor_complaint.execute(sql_complaint)
+    result_complaint=mycursor_complaint.fetchall()
+
+    complaints_list = []
+    for row in result_complaint:
+        complaint_dict = {'sr_no': row[0], 'license_no': row[1], 'complaints_registered': row[2]}
+        complaints_list.append(complaint_dict)
+
+# Write the complaints_list to a JSON file
+    with open('complaints.json', 'w') as f:
+        json.dump(complaints_list, f)
+
+     
+   
    
     while True:
         socketio.sleep(0)
@@ -29,9 +50,12 @@ def background_thread():
             database="suvds"
         )
 
+       
+
 
         mycursor = mydb.cursor()
         sql = "SELECT * FROM main WHERE id = '%s'" % latestsrno
+
         mycursor.execute(sql)
         print('Here1')
         result = mycursor.fetchall()

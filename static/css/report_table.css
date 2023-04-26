@@ -37,3 +37,25 @@
     background-color: #e6f7ff;
     cursor: pointer;
   }
+  
+
+  .tablenav-container {
+   
+    font-family: Arial, sans-serif;
+  }
+
+  .tablenav-container th {
+    background-color: #082533;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+  }
+
+  .tablenav-container tr {
+    background-color: #f6f6f6;
+    color: rgb(23, 1, 1);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+  }

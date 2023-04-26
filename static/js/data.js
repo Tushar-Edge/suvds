@@ -46,6 +46,7 @@ function showPopup() {
             var cell8=newRow.insertCell(7);
             var cell9=newRow.insertCell(8);
             var cell10=newRow.insertCell(9);
+            var cell11=newRow.insertCell(10)
 
 
             cell1.innerHTML=data.newprice;
@@ -57,18 +58,13 @@ function showPopup() {
             cell7.innerHTML=data.date_s;
             cell8.innerHTML=data.time_s;
             cell9.innerHTML=data.flag;
-            // cell10.appendChild(Object.assign(document.createElement('button'), {textContent: 'show  map', onclick: showPopup}));
-            // cell10.appendChild(Object.assign(document.createElement('button'), {
-            //     textContent: 'show map',
-            //     onclick: showPopup,
-            //     style: 'background-color: ; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;'
-            //   }));
             cell10.appendChild(Object.assign(document.createElement('i'), {
                 className: 'fas fa-map-marker-alt',
                 onclick: showPopup,
                 style: 'cursor: pointer; color: blue'
               }));    
 
+            
 
             if(data.flag==1)
             {
@@ -77,25 +73,29 @@ function showPopup() {
 
 
 
+           document.getElementById("vehicle-license-number").value
+         if(document.getElementById("vehicle-license-number").value==data.lics_no)   
+         {
+            
+            var table = document.querySelector('.tablexx table tbody');
+            var newRowN = table.insertRow();
+            var cell1=newRowinsertCell(0);
+            var cell2=newRowN.insertCell(1);
+            var cell3=newRowN.insertCell(2);
+            var cell4=newRowN.insertCell(3);
 
-            // let button = document.createElement("button");
-            // button.innerHTML="Show map";
+            //cell1.innerHTML=
+            cell2.innerHTML=data.location;
+            cell3.innerHTML=data.date_s;
+            cell4.innerHTML=data.time_s;
 
-            // button.onclick=showPopup();
-            // cell10.innerHTML='';
-            // cell10.append(button);
 
-            // create a button, add a click listener, append to cell, and define click function in one line
-           
+         }
 
             if (cb)
                 cb();
            
-                
-                //row += '<td></td>';
-               
-            //console.log(msg.c_make);
-           // $('#log').append('<br>' + $('<div/>').text('Received #' + msg.count + ': ' + msg.c_make + ' ').html());
+            
             
         });
         

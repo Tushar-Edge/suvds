@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../static/css/toggle.css">
     <link rel="stylesheet" href="../static/css/sliding_panel.css">
     <link rel="stylesheet" href="../static/css/report_table.css">
+    <link rel="stylesheet" href="../static/css/nav.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
@@ -26,12 +27,14 @@
     <script src="../static/js/table.js"></script>
     <script src="../static/js/toggle_table.js"></script>
     <script src="../static/js/data.js"></script>
+    <script src="../static/js/find.js"></script>
    
 
-    <head>
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha384-EbFkNjQssoq9iZzY2iJ6PYvD6I7y1dXRi0Wqvqx6UvE6OhfZ6b9YrOo+TujTJ1td" crossorigin="anonymous">
-      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha384-vBgC3+NfN4D4Ct+RdZbPJssG9BRLV7ivjRYGw/oV7taDXn5l8V7PyuLOEWL5Vxh5" crossorigin="anonymous"></script>
-    </head>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    
+    
     
 
     <title>Document</title>
@@ -110,7 +113,41 @@
         </table>
     </div>
       </div></article>
-      <nav>Nav</nav>
+      <nav>
+
+          
+          <label for="vehicle-license-number" style="color: #666666;">Vehicle License Number:</label>
+          <input type="text" id="vehicle-license-number" name="vehicle-license-number" value="enter" style="margin-top: 10px;">
+          <button id="search-button" onclick="search()">Go</button>
+        
+
+        <div class="tablenav-container">
+          <div class="tablexx">
+          <table>
+            <thead>
+              <tr>
+                <th>Sr No.</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Time</th>
+              
+              </tr>
+
+              </thead>
+              <tbody>
+             
+
+              </tbody>
+
+
+              </table>
+
+
+            </div>
+        </div>
+
+
+      </nav>
       <aside>Aside</aside>
     </div>
     <footer>Footer</footer>

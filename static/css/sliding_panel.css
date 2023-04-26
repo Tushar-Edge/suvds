@@ -62,3 +62,11 @@
   .hidden {
     display: none;
   }
+  .tablexx {
+    height: 300px; /* adjust as needed */
+    overflow: auto;
+    position: relative;
+  }
+  
+
+  
