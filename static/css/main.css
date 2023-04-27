@@ -94,16 +94,36 @@
         order: 3;
       }
       #main > aside {
-        background: beige;
+        background: rgb(189, 232, 103);
         order: 2;
       }
-      header, footer {
-        background: yellowgreen;
+      header
+      {
+        
+         background: rgba(64, 72, 95, 0.705);
         height: 16vh;
+      }
+      
+      
+      footer {
+        background:  rgba(64, 72, 95, 0.705);
+        height: 12vh;
       }
       header, footer, article, nav, aside {
         padding: 1em;
       }
 
      
+
+      #logo
+      {
+        width: 30%;
+
+
+      }
+
+      #logo_
+      {
+        width: 30%;
+      }
       

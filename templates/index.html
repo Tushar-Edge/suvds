@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../static/css/sliding_panel.css">
     <link rel="stylesheet" href="../static/css/report_table.css">
     <link rel="stylesheet" href="../static/css/nav.css">
+    <link rel="stylesheet" href="../static/css/aside.css">
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -36,7 +37,7 @@
   
           <!-- Leaflet library -->
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-          <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+          <script type="text/javascript" src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
           <!-- Leaflet GeoJSON library -->
         
@@ -71,7 +72,12 @@
   <div id="background"></div>
 
 
-    <header>Header</header>
+    <header>
+      <div id="logo">
+        <img id="logo_" src="../static/assets/tracklogo2..png">
+      </div>
+
+    </header>
   
   
     <div id="main"> 
@@ -157,12 +163,18 @@
 
 
       </nav>
-      <aside>Aside</aside>
+      <aside>
+      <div class="counter-card">
+        <h2 class="counter-value">0</h2>
+        <p class="counter-label">Vehicles flagged</p>
+      </div>
+    </aside>
     </div>
     <footer>Footer</footer>
     
 
-    <script src="https://unpkg.com/leaflet-geojson@0.9.1/dist/leaflet-geojson.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/leaflet-geojson@0.9.1/dist/leaflet-geojson.js"></script>
+
     
 
   </body>

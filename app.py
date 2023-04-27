@@ -59,6 +59,14 @@ def background_thread():
         mycursor.execute(sql)
         print('Here1')
         result = mycursor.fetchall()
+
+
+        # flagged_count_sql = "SELECT COUNT(*) FROM main WHERE flag = 'true'"
+        # mycursor.execute(flagged_count_sql)
+        # flagged_count = mycursor.fetchall()[0]
+        
+
+
         try:
             print(result[0][0])
             print(result[0][1])
@@ -80,7 +88,8 @@ def background_thread():
             'date_s': str(result[0][8]),
             'time_s': str(result[0][9]),
             'flag': str(result[0][10]),
-            'count':count
+            'count':count,
+            #'flagged_cars':flagged_count
             
         }
 

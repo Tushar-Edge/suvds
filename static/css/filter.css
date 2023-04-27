@@ -30,7 +30,7 @@
   .filter-group input[type="date"]:focus,
   .filter-group input[type="text"]:focus {
     outline: none;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
   
   #filter-button {

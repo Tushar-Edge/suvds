@@ -1,5 +1,5 @@
 .tablex {
-    height: 300px; /* adjust as needed */
+    height: 360px; /* adjust as needed */
     overflow: auto;
     position: relative;
   }
@@ -63,9 +63,11 @@
     display: none;
   }
   .tablexx {
-    height: 300px; /* adjust as needed */
+    height: 360px; /* adjust as needed */
     overflow: auto;
     position: relative;
+
+  
   }
   
 

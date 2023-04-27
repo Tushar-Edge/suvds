@@ -24,6 +24,7 @@ function showPopup() {
         var socket = io();
 
 
+        var f_count=0;
         socket.on('connect', function() {
             socket.emit('my_event', {data: 'I\'m connected!'});
         });
@@ -50,7 +51,13 @@ function showPopup() {
 
             
             
-            cell1.innerHTML=data.newprice;
+            
+         
+    
+            
+              cell1.innerHTML=data.newprice;
+            
+ 
            // cell2.innerHTML = `<div id="lics" onclick="search()">${data.lics_no}</div>`;
            cell2.innerHTML = `<div id="lics" onclick="search('${data.lics_no}')">${data.lics_no}</div>`;
 
@@ -64,7 +71,7 @@ function showPopup() {
             cell10.appendChild(Object.assign(document.createElement('i'), {
                 className: 'fas fa-map-marker-alt',
                 onclick: showPopup,
-                style: 'cursor: pointer; color: blue'
+                style: 'cursor: pointer; color: yellowgreen'
               }));    
 
             
@@ -74,7 +81,52 @@ function showPopup() {
             newRow.style.backgroundColor = 'red'
             }
 
+            //console.log(data.flagged_cars);
 
+
+            if(data.lics_no=="TN06EF5566")
+           {
+            newRow.style.backgroundColor = 'grey'
+
+           }
+
+           const counterValue = document.querySelector('.counter-value');
+            if(data.flag==1)
+           {
+            f_count+=1;
+            counterValue.innerHTML = f_count;
+                       
+           counterValue.classList.add('updated');
+           setTimeout(() => {
+             counterValue.classList.remove('updated');
+           }, 300);
+         
+         
+           }
+
+           
+          
+
+                    
+
+            // // Fetch the complaints.json file
+            // fetch('/complaints.json')
+            // .then(response => response.json())
+            // .then(data => {
+            // // Extract the license_no values into an array
+            // const licenseNos = data.map(complaint => complaint.license_no);
+            // console.log(licenseNos);
+            // // Do something with the licenseNos array
+            // })
+            // .catch(error => console.error(error));
+// 
+            // const jsonData = '[{"license_no": "GJ07IJ77886"}, {"license_no": "TN06EF5566"}, {"license_no": "UP03AB9101"}]';
+            // const data = JSON.parse(jsonData);
+            // console.log(data);
+            
+
+
+ 
 
 
             if (cb)

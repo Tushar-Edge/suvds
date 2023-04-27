@@ -23,7 +23,7 @@ function filter() {
 
     // Get cell values
     const dateCell = row.getElementsByTagName("td")[6];
-    ///const yearCell = dateCell.spli;
+    
     const locationCell = row.getElementsByTagName("td")[5];
 
     const flagCell = row.getElementsByTagName("td")[8];
