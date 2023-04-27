@@ -5,22 +5,5 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18
 }).addTo(mymap);
 
-// Define your GeoJSON data
-var geojsonData = {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "My Point"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [73.7902, 19.9947]
-            }
-        }
-    ]
-};
-
-// Create a new GeoJSON layer and add it to the map
-L.geoJSON(geojsonData).addTo(mymap);
+L.marker([51.5, -0.09]).addTo(mymap)
+    .bindPopup('Hello World!');
