@@ -40,7 +40,7 @@ def background_thread():
    
    
     while True:
-        socketio.sleep(0)
+        socketio.sleep(2)
         count += 1
 
         mydb = mysql.connector.connect(
@@ -76,6 +76,16 @@ def background_thread():
         
 
 
+        lat_str = str(result[0][7])
+        lon_str = str(result[0][6])
+
+        lat = float(lat_str[:-3]) if lat_str[-1] == 'N' else -1 * float(lat_str[:-3])
+        lon = float(lon_str[:-3]) if lon_str[-1] == 'E' else -1 * float(lon_str[:-3])
+
+            #print(lat, lon) # Output: 12.9716 77.5946
+
+
+
         data = { 
             'newprice': str(result[0][0]),
             'lics_no': str(result[0][1]),
@@ -83,8 +93,8 @@ def background_thread():
             'c_model': str(result[0][3]),
             'c_color': str(result[0][4]),
             'location': str(result[0][5]),
-            'longitude': str(result[0][6]),
-            'latitude': str(result[0][7]),
+            'longitude':  lon,
+            'latitude': lat,
             'date_s': str(result[0][8]),
             'time_s': str(result[0][9]),
             'flag': str(result[0][10]),

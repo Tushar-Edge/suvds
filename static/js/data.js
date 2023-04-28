@@ -1,10 +1,36 @@
-//import { showPopup,closePopup } from './popup.js';// function to show the pop-up window with the images
-function showPopup() {
+//import { showmap } from './map.js';// function to show the pop-up window with the images
+
+
+
+function showmap(longitude,latitude,location)
+{
+
+  var mymap = L.map('mapid').setView([latitude, longitude], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+      maxZoom: 18
+  }).addTo(mymap);
+  
+  L.marker([latitude, longitude]).addTo(mymap)
+      .bindPopup(location);
+            
+
+
+
+}
+
+
+function showPopup(longitude,latitude,location) {
 	// show the background blur
+
+  
 	document.getElementById("background").style.display = "block";
 
 	// show the pop-up container
 	document.getElementById("popup-container").style.display = "block";
+  showmap(longitude,latitude,location);
+
 }
 
 // function to close the pop-up window
@@ -25,6 +51,7 @@ function showPopup() {
 
 
         var f_count=0;
+        var fir_count=0;
         socket.on('connect', function() {
             socket.emit('my_event', {data: 'I\'m connected!'});
         });
@@ -49,13 +76,13 @@ function showPopup() {
             var cell10=newRow.insertCell(9);
             var cell11=newRow.insertCell(10)
 
-            
+           
             
             
          
     
             
-              cell1.innerHTML=data.newprice;
+          cell1.innerHTML=data.newprice;
             
  
            // cell2.innerHTML = `<div id="lics" onclick="search()">${data.lics_no}</div>`;
@@ -69,13 +96,17 @@ function showPopup() {
             cell8.innerHTML=data.time_s;
             cell9.innerHTML=data.flag;
             cell10.appendChild(Object.assign(document.createElement('i'), {
-                className: 'fas fa-map-marker-alt',
-                onclick: showPopup,
-                style: 'cursor: pointer; color: yellowgreen'
-              }));    
-
+              className: 'fas fa-map-marker-alt',
+              onclick: function() {
+                showPopup.apply(null, [data.longitude,data.latitude,data.location]);
+              },
+              style: 'cursor: pointer; color: yellowgreen'
+            }));
+             
             
-
+            console.log(data.longitude);
+            console.log(data.latitude)
+         
             if(data.flag==1)
             {
             newRow.style.backgroundColor = 'red'
@@ -101,11 +132,21 @@ function showPopup() {
              counterValue.classList.remove('updated');
            }, 300);
          
-         
            }
 
-           
-          
+           const counterValue2 = document.querySelector('.counter-value2');
+           if(data.flag==1)
+          {
+           fir_count+=1;
+           counterValue2.innerHTML = fir_count;
+                      
+          counterValue2.classList.add('updated2');
+          setTimeout(() => {
+            counterValue2.classList.remove('updated2');
+          }, 300);
+        
+          }
+
 
                     
 
@@ -135,5 +176,7 @@ function showPopup() {
             
             
         });
+        
+      //showmap(data.longitude,data.latitude,data.location);
         
     });

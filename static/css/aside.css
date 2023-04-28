@@ -8,6 +8,7 @@
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 0 10px rgb(86, 86, 86);
+    margin-bottom: 10px;
   }
   
   .counter-value {
@@ -25,6 +26,40 @@
   }
   
   .counter-value.updated {
+    transform: rotate(-90deg);
+    
+  }
+
+
+
+
+  .counter-card2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 275px;
+    height: 150px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgb(86, 86, 86);
+  }
+  
+  .counter-value2 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ff0000;
+    margin: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .counter-label2 {
+    font-size: 24px;
+    color: #000000;
+    margin: 0;
+  }
+  
+  .counter-value.updated2 {
     transform: rotate(-90deg);
     
   }

@@ -101,8 +101,8 @@
       
       
       footer {
-        background:  rgba(64, 72, 95, 0.705);
-        height: 12vh;
+        background:  #082533;
+        height: 8vh;
       }
       header, footer, article, nav, aside {
         padding: 1em;
