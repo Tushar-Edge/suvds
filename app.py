@@ -40,7 +40,7 @@ def background_thread():
    
    
     while True:
-        socketio.sleep(2)
+        socketio.sleep(0)
         count += 1
 
         mydb = mysql.connector.connect(

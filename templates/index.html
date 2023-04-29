@@ -31,12 +31,14 @@
    
     <script src="../static/js/filter.js"></script>
     
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     
     <script src="../static/js/popup.js"></script>
     <script src="../static/js/table.js"></script>
     <script src="../static/js/toggle_table.js"></script>
     <script src="../static/js/data.js"></script>
     <script src="../static/js/find.js"></script>
+
    
 
   
@@ -56,7 +58,7 @@
 <body>
 
 
-        
+<!--         
  
 
   <div id="popup-container">
@@ -64,16 +66,17 @@
       <span class="close" onclick="closePopup()">&times;</span>
       <div id="images-container">
 
+ 
         <div id="mapid">
 
           <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
           <script src="../static/js/map.js"></script>
-        </div>
+        </div>  
+       
     
-
       </div>
     </div>
-  </div>
+  </div> -->
 
   
   <div id="background"></div>
@@ -142,7 +145,20 @@
           </tbody>
         </table>
     </div>
-      </div></article>
+      </div>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-color red"></div>
+          <div class="legend-label">Flagged cars</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color grey"></div>
+          <div class="legend-label">FIR registered cars</div>
+        </div>
+      </div>
+      
+    
+    </article>
       <nav>
 
           
