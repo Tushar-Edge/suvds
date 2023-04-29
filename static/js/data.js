@@ -142,13 +142,24 @@ function showPopup(popupContainer) {
               popupContainer.appendChild(popup);
 
               // create a close button for the popup
-              var closeButton = document.createElement("span");
-              closeButton.setAttribute("class", "close-"+ data.newprice);
-              closeButton.setAttribute("onclick", "closePopup(popupContainer)");
-              closeButton.innerHTML = "&times;";
-              popup.appendChild(closeButton);
+              // var closeButton = document.createElement("span");
+              // closeButton.setAttribute("class", "close-"+ data.newprice);
+              // closeButton.setAttribute("onclick", "closePopup(popupContainer)");
+              // closeButton.innerHTML = "&times;";
+              // popup.appendChild(closeButton);
 
-              // create a new images container for the popup
+
+                            // Add event listener for "keydown" event on document
+              document.addEventListener("keydown", function(event) {
+                // Check if "Esc" key was pressed
+                if (event.key === "Escape") {
+                  // Call closePopup() function to close popup container
+                  closePopup(popupContainer);
+                }
+              });
+
+
+                            // create a new images container for the popup
               var imagesContainer = document.createElement("div");
               imagesContainer.setAttribute("id", "images-container-"+ data.newprice);
               popup.appendChild(imagesContainer);
@@ -188,7 +199,7 @@ function showPopup(popupContainer) {
 
                 //add css to mapid
                 mapid.style.width = "100%";
-                mapid.style.height = "500px";
+                mapid.style.height = "550px";
 
            
 
