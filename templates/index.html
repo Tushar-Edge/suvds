@@ -22,7 +22,10 @@
     <link rel="stylesheet" href="../static/css/aside.css">
     <link rel="stylesheet" href="../static/css/nav_buttons.css">
     
-    
+
+    <!-- for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
@@ -38,6 +41,7 @@
     <script src="../static/js/toggle_table.js"></script>
     <script src="../static/js/data.js"></script>
     <script src="../static/js/find.js"></script>
+    <!-- <script src="../static/js/graph.js"></script> -->
 
    
 
@@ -202,8 +206,51 @@
 
       <div class="counter-card2">
         <h2 class="counter-value2">0</h2>
-        <p class="counter-label2">Vehicles flagged</p>
+        <p class="counter-label2">Fir registered</p>
       </div>
+
+
+      <canvas id="line-graph" width="280" height="240"></canvas>
+
+      <script>
+        
+
+// Data for the line graph
+const data = {
+    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    datasets: [{
+        label: 'Amount of Cars Flagged',
+        data: [0.3, 0.4, 0.7, 0.3, 0.5, 0.6],
+        fill: false,
+        borderColor: 'red',
+        lineTension: 0.1
+    }]
+};
+
+// Configuration options for the line graph
+const options = {
+    animation: {
+        duration: 3000,
+        easing: 'easeInOutQuart'
+    },
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true,
+                max: 1
+            }
+        }]
+    }
+};
+
+// Create the line graph
+const lineGraph = new Chart(document.getElementById('line-graph'), {
+    type: 'line',
+    data: data,
+    options: options
+});
+
+      </script>
     </aside>
     </div>
     <footer>Footer</footer>
