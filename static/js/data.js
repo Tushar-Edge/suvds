@@ -17,6 +17,8 @@
             
 
 
+//import data_c from './complaints.json';
+// Do something with the data
 
 // }
 
@@ -25,7 +27,7 @@ function showmap(longitude, latitude, location,mapid) {
  
   //console.log(mapid.id);
   var mapid=mapid.id;
-  var mymap = L.map(mapid).setView([latitude, longitude], 13);
+  var mymap = L.map(mapid).setView([latitude, longitude], 15);
 
 
 
@@ -262,22 +264,21 @@ function showPopup(popupContainer) {
 
                     
 
-            // // Fetch the complaints.json file
-            // fetch('/complaints.json')
-            // .then(response => response.json())
-            // .then(data => {
-            // // Extract the license_no values into an array
-            // const licenseNos = data.map(complaint => complaint.license_no);
-            // console.log(licenseNos);
-            // // Do something with the licenseNos array
-            // })
-            // .catch(error => console.error(error));
-// 
-            // const jsonData = '[{"license_no": "GJ07IJ77886"}, {"license_no": "TN06EF5566"}, {"license_no": "UP03AB9101"}]';
-            // const data = JSON.parse(jsonData);
-            // console.log(data);
-            
+            //Fetch the complaints.json file
+            fetch('./complaints.json')
+            .then(response => response.json())
+            .then(data => {
+            // Extract the license_no values into an array
+            const licenseNos = data.map(complaint => complaint.license_no);
+            console.log(licenseNos);
+            // Do something with the licenseNos array
+            })
+            .catch(error => console.error(error));
 
+            // const jsonData = '[{"license_no": "GJ07IJ77886"}, {"license_no": "TN06EF5566"}, {"license_no": "UP03AB9101"}]';
+            // const data_j = JSON.parse(jsonData);
+            // console.log(data_j);
+       
 
  
 

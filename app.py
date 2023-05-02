@@ -33,7 +33,7 @@ def background_thread():
         complaints_list.append(complaint_dict)
 
 # Write the complaints_list to a JSON file
-    with open('complaints.json', 'w') as f:
+    with open('complaints_list.json', 'w') as f:
         json.dump(complaints_list, f)
 
      

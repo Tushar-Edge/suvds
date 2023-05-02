@@ -54,6 +54,10 @@ function search(lics_value = "")
             cell3.innerHTML=date_;
             cell4.innerHTML=time_;
 
+
+            // var name=document.getElementById("name");
+            // name.innerText=
+
             if(flag_=="1")
             {
             newRow.style.backgroundColor = 'red'
