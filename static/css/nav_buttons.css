@@ -13,17 +13,18 @@ navl ul {
     padding: 10px 20px;
     text-decoration: none;
     color: #fff;
-    background-color: #8BC34A;
+    background-color: #01531e;
     border-radius: 5px;
     transition: background-color 0.3s ease;
     border-bottom: #fff;
   }
   
   navl ul li a:hover {
-    background-color: #689F38;
+    background-color: #2b5d00;
   }
   
   navl ul li a.active {
-    background-color: #689F38;
+    background-color:  #2b5d00; 
+    
   }
   

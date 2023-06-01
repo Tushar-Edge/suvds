@@ -1,6 +1,9 @@
 function search(lics_value = "")
 {
-   
+  // var o_name=document.getElementById('name');
+  // o_name.innerText='';
+  // o_name.innerText='Tushar Avhad';
+  
 
     const rows = document.querySelectorAll('table tbody tr');
     const lics_argument=document.getElementById('vehicle-license-number');

@@ -117,9 +117,84 @@ def background_thread():
             continue
 
 
-@app.route('/')
-def index():
+@app.route('/dashboard')
+def dashboard():
     return render_template('index.html', async_mode=socketio.async_mode)
+
+
+@app.route('/')
+def Home():
+    return render_template('Home.html', async_mode=socketio.async_mode)
+
+
+
+@app.route('/index.html')
+def Homet():
+    return render_template('Home.html', async_mode=socketio.async_mode)
+
+
+@app.route('/Home')
+def Homet2():
+    return render_template('Home.html', async_mode=socketio.async_mode)
+
+
+
+# @app.route('/RTOupdate')
+# def RtoUpdate():
+#     return render_template('rtoUpdate.html', async_mode=socketio.async_mode)
+
+
+
+
+
+@app.route('/about.html')
+def about():
+    return render_template('about.html', async_mode=socketio.async_mode)
+
+
+
+@app.route('/contact.html')
+def contact():
+    return render_template('contact.html', async_mode=socketio.async_mode)
+
+
+
+
+
+@app.route('/RTOupdate')
+def RTOupdate():
+
+
+    rtoData = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="Edge@86722768",
+            database="rto"
+        )
+
+    cur = rtoData.cursor()
+    cur.execute("SELECT * FROM rto")
+    data = cur.fetchall()
+    cur.close()
+
+    return render_template('rtoUpdate.html', vehicle=data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @socketio.event
